@@ -26,4 +26,14 @@ export class AppComponent {
     this.count = 0;
     console.log("Count reset to: ", this.count);
   }
+
+  handlecounter(val:string) {
+    if (val === 'increment') {
+      this.increment();
+    } else if (val === 'decrement') {
+      this.decrement();
+    } else if (val === 'reset') {
+      this.reset();
+    }
+  }
 }

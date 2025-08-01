@@ -79,13 +79,27 @@ Username is {{displayName}}
 }
 <br>
 <h2>Students List</h2>
-@for(student of displayedStudents; track student; let idx=$index) {
-<div>
-  <h3>{{idx+1}}. {{student.name}}</h3>
-  <p>Age: {{student.age}}</p>
-  <p>City: {{student.city}}</p>
-  <p>Email: {{student.email}}</p>
-</div>
-}
+<table border="1" style="border-collapse: collapse; width: 50%; text-align: center;padding-right: 80%; margin-left: 2%;">
+  <thead>
+    <tr>
+      <th>S.No</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>City</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(student of displayedStudents; track student; let idx=$index) {
+    <tr>
+      <td>{{idx+1}}</td>
+      <td>{{student.name}}</td>
+      <td>{{student.age}}</td>
+      <td>{{student.city}}</td>
+      <td>{{student.email}}</td>
+    </tr>
+    }
+  </tbody>
+</table>
 }
 <router-outlet />

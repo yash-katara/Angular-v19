@@ -93,7 +93,7 @@ export class AppComponent {
     this.displayedStudents = this.Students;
     this.showData = !this.showData; // Toggle showData
     console.log('Data displayed:', this.showData ?"showing" : "not showing");
-    console.log('Users: ', this.users);
-    console.log('Students: ', this.Students);
+    // console.log('Users: ', this.users);
+    // console.log('Students: ', this.Students);
   }
 }

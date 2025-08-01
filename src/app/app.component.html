@@ -15,4 +15,50 @@
 </div>
 
 
+<h1>Get and Set Value from Input feild Value</h1>
+<input type="text" value="{{Name}}" (input)="getname($event)" placeholder="enter value">
+<br>
+<br>
+<button (click)="showname()">Get Value</button> 
+<button (click)="setName()">Set Value</button> <br> <br>
+Username is {{displayName}}
+
+
+<h1>If/Else in Angular v19</h1>
+@if(display){
+  <div style="width: 200px; height: 200px;background: green;;"></div>
+}
+<br>
+<!-- <button (click)="hide()" >hide div</button>
+<button (click)="show()" >show div</button> -->
+<button (click)="toggle()" >toggle div</button>
+
+
+
+<h1>Switch statement</h1>
+@switch(color){
+  @case('red'){
+   
+    <div style="width: 200px; height: 200px;background: red;"> <h1>red color</h1></div>
+  }
+  @case('green'){
+   
+    
+    <div style="width: 200px; height: 200px;background: green;"> <h1>green color</h1></div>
+  }
+  @case('blue'){
+    <div style="width: 200px; height: 200px;background: blue;"> blue color</div>
+  }
+
+@default {
+  <div style="width: 200px; height: 200px;background: yellow;"> <h1>yellow color</h1></div>
+}
+}
+<button (click)="handlecolor('green')">green</button>
+<button (click)="handlecolor('red')">red</button>
+
+<button (click)="handlecolor('blue')">blue</button>
+
+
+
 <router-outlet />

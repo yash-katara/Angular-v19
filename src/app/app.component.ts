@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 
@@ -10,7 +10,10 @@ import { LoginComponent } from './login/login.component';
 })
 export class AppComponent {
   title = 'Angular-v19';
-  Name = " Yash Katara";
+  Name = " ";
+  displayName = '';
+  display = true; // For if/else example
+  color = 'yello'; 
 
   count = 0;
 
@@ -35,5 +38,37 @@ export class AppComponent {
     } else if (val === 'reset') {
       this.reset();
     }
+  }
+
+  getname(event: any) {
+    const inputValue = event.target.value;
+    console.log("Input value: ", inputValue);
+   this.Name = inputValue;
+    console.log("Updated Name: ", this.Name);
+  }
+  showname() {
+    this.displayName = this.Name;
+    console.log("Current Name: ", this.Name);
+  }
+  setName() {
+    this.Name = 'Anup';
+    console.log("Name set to: ", this.Name);
+  }
+  // hide(){
+  //   this.display = false;
+  //   console.log("Div hidden");
+  // }
+  // show(){
+  //   this.display = true;
+  //   console.log("Div shown");
+  // }
+  toggle() {
+    this.display = !this.display;
+    console.log("Div toggled, current state: ", this.display ? 'shown' : 'hidden');
+  }
+  handlecolor(val:any) {
+    //this.color = this.color === 'green' ? 'blue' : 'red';
+    this.color = val;
+    console.log("Color changed to: ", this.color);
   }
 }

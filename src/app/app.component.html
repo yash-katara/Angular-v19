@@ -130,5 +130,40 @@ Username is {{displayName}}
 <p>These are only read only signals they changes only forcefully by changing dependency of signals
 </p>
 <h1>{{c()}}</h1>
-<button (click)="showValue()">Show Value</button>
-<router-outlet />
+<button (click)="showValue()">Show Value</button> <br> <br>
+
+<button (click)="ReadDirectives()">Read Directives</button>
+<div *ngIf="show">
+  <H2 >Directives In Angular 19</H2>
+<p>Directives are used to change the DOM structure or behavior.</p>
+<p>There are three types of directives in Angular 19</p>
+<ul>
+  <li>Components</li>
+  <li>Structural Directives</li>
+  <li>Attribute Directives</li>
+</ul> 
+<p>Components are the directives with a template.</p>
+<p>Structural directives are used to change the DOM structure.</p>
+<p>Attribute directives are used to change the behavior of the DOM elements.</p>
+<p>Structural directives are used to add or remove elements from the DOM.</p>
+<p>Attribute directives are used to change the behavior of the DOM elements.</p>
+
+<h3>*ngFor Directives</h3>
+<p>*ngFor is a structural directive that is used to iterate over a collection and render a template for each item in the collection.</p>
+<p>It is used to display a list of items in the DOM.</p>
+<ul>
+  <li *ngFor="let x of Students">
+    <h3>{{x.name}} , {{x.age}}, {{x.city}}, {{x.email}} </h3>
+    <!-- <p>{{x.age}}</p>
+    <p>{{x.city}}</p>
+    <p>{{x.email}}</p> -->
+  </li> 
+</ul>
+</div>
+<ul>
+  <li>
+    <a routerLink="login"> Login</a> <br> <br>
+    <a routerLink="about"> About</a>
+  </li>
+</ul>
+<router-outlet ></router-outlet>

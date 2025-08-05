@@ -1,10 +1,11 @@
 import { Component, computed, effect, input, signal, Signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { NgIf ,NgFor} from '@angular/common';
 import { LoginComponent } from './login/login.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, LoginComponent],
+  imports: [RouterOutlet,NgIf, NgFor,LoginComponent,RouterLink, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -122,8 +123,10 @@ showValue() {
   console.log(this.c());
   this.a.set(30) // Update a to 30
   console.log(this.c());
-  
-  
- 
+
+}
+show = true;
+ReadDirectives() {
+  this.show = !this.show;
 }
 }

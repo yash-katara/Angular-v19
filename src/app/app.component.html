@@ -5,7 +5,7 @@
 <h1>Counter App</h1>
 
 <div style="text-align: center;">
-  <h2 class="count">{{count}}</h2>
+  <h2 class="count">{{count1}}</h2>
   <div>
     <button class="btn bg-red" (click)="handlecounter('decrement')">Decrement</button>
 
@@ -65,21 +65,28 @@ Username is {{displayName}}
 
 <button (click)="handlecolor('blue')">blue</button>
 
-<h1>for loop</h1>
+<h1>For loop in Angulkar V19</h1>
 
 <h1>Show Data on Button Click</h1>
 <button (click)="getdata()">Show Users & Students</button>
 <br><br>
 @if(showData){
 <h2>Users List</h2>
-@for(user of displayedUsers; track user) {
+@for(user of displayedUsers; track user ; let idx=$index) {
 <div>
-  <h3>{{user}}</h3>
+  {{$first}} <br>
+  {{$last}} <br>
+  {{$even}} <br>
+  {{$odd}} <br>
+  <h3>{{idx+1}} {{$index}} {{user}}</h3>
+  <br>
+  <h2> {{$count}}</h2>
 </div>
 }
 <br>
+<div style="padding-right: 50%; margin-left: 10%;">
 <h2>Students List</h2>
-<table border="1" style="border-collapse: collapse; width: 50%; text-align: center;padding-right: 80%; margin-left: 2%;">
+<table border="1" style="border-collapse: collapse; width: 50%; text-align: center;">
   <thead>
     <tr>
       <th>S.No</th>
@@ -101,5 +108,27 @@ Username is {{displayName}}
     }
   </tbody>
 </table>
+</div>
 }
+
+
+
+
+<h1 class="text-align">Signals in Angular 19</h1>
+<p>A signal is a Wrapprer around a value that give a signal when value changes.</p>
+<h1>{{x}}</h1>
+<h1>{{count()}}</h1>
+<!-- <button (click)="count.set(100)">Increase</button> -->
+<button (click)="updateValue()">Update</button>
+<br>
+<br>
+{{data()}}
+<button (click)="updatesignal()">Update Signal</button>
+<h1>{{count3()}}</h1>
+
+<h1>Computed Signals</h1>
+<p>These are only read only signals they changes only forcefully by changing dependency of signals
+</p>
+<h1>{{c()}}</h1>
+<button (click)="showValue()">Show Value</button>
 <router-outlet />

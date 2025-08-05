@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, effect, input, signal, Signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 
@@ -15,18 +15,18 @@ export class AppComponent {
   display = true; // For if/else example
   color = 'yello';
 
-  count = 0;
+  count1 = 0;
 
   increment() {
-    this.count++;
+    this.count1++;
     console.log('Incremented count: ', this.count);
   }
   decrement() {
-    this.count--;
+    this.count1--;
     console.log('Decremented count: ', this.count);
   }
   reset() {
-    this.count = 0;
+    this.count1 = 0;
     console.log('Count reset to: ', this.count);
   }
 
@@ -96,4 +96,34 @@ export class AppComponent {
     // console.log('Users: ', this.users);
     // console.log('Students: ', this.Students);
   }
+count = signal(10);
+x=20;
+constructor(){
+  effect(() => {
+    console.log('Count changed: ', this.count());
+  });
+}
+updateValue() {
+  this.x = this.x + 10; // Increment x by 10
+  this.count.set(this.count() + 10); // Increment count by 10
+  console.log('Updated count: ', this.count());
+  console.log('Updated x: ', this.x);
+}
+// Signal example of data-types  
+data = signal<number|string>(20)
+count3:Signal<number>= computed (()=>20)
+updatesignal(){
+  this.data.set('Yash-Katara')
+}
+a= signal(10);
+b=signal(20);
+c= computed(()=>this.a() + this.b());
+showValue() {
+  console.log(this.c());
+  this.a.set(30) // Update a to 30
+  console.log(this.c());
+  
+  
+ 
+}
 }

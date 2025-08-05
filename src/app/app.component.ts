@@ -2,10 +2,11 @@ import { Component, computed, effect, input, signal, Signal } from '@angular/cor
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { NgIf ,NgFor} from '@angular/common';
 import { LoginComponent } from './login/login.component';
+import { FormComponent } from './form/form.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,NgIf, NgFor,LoginComponent,RouterLink, RouterOutlet],
+  imports: [RouterOutlet,NgIf, NgFor,LoginComponent,RouterLink, RouterOutlet , FormComponent  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

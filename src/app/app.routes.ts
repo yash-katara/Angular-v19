@@ -6,6 +6,10 @@ import { FormComponent } from './form/form.component';
 export const routes: Routes = [
     {path: '', redirectTo: '/login', pathMatch: 'full'},
     {path: 'login', component : LoginComponent},
-    { path : 'about', component: AboutComponent},
-    {path: 'form', component:FormComponent}
+
+     { path : 'about', component: AboutComponent},
+     {path: 'form', component: FormComponent},
+    // {path:'about', loadChildren: () => import('./about/about.component').then(m => m.AboutComponent)},
+
+    // {path: 'form', loadChildren: () => import('./form/form.component').then(m => m.FormComponent)},
 ];

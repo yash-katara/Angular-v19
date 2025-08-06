@@ -168,3 +168,16 @@ Username is {{displayName}}
   </li> 
 </ul>
 </div>
+
+<button (click)="getProducts()">Load Product data</button>
+{{product.length}} Products Loaded
+<h1>Product List</h1>
+<ul>
+  @for(item of product; track item; let idx=$index) {
+  <li>
+    <h3>{{idx+1}}. {{item.name}} - ${{item.price}}</h3>
+  </li>
+  }
+
+<!-- <app-login></app-login>
+<app-form></app-form> -->

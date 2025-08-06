@@ -3,14 +3,19 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { NgIf ,NgFor} from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { FormComponent } from './form/form.component';
+import { ProductService } from './product.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,NgIf, NgFor,LoginComponent,RouterLink, RouterOutlet , FormComponent  ],
+  
+  imports: [LoginComponent,RouterOutlet,NgIf, NgFor,RouterLink, RouterOutlet , FormComponent  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+
+//constructor( private productService:ProductService){}
+
   title = 'Angular-v19';
   Name = ' ';
   displayName = '';
@@ -100,11 +105,20 @@ export class AppComponent {
   }
 count = signal(10);
 x=20;
-constructor(){
+product:any[]= [];
+constructor( private productService: ProductService){
   effect(() => {
     console.log('Count changed: ', this.count());
   });
+
 }
+getProducts() {
+  this.product = this.productService.getProducts();
+  console.log('Products fetched: ', this.product);
+
+}
+
+
 updateValue() {
   this.x = this.x + 10; // Increment x by 10
   this.count.set(this.count() + 10); // Increment count by 10

@@ -8,7 +8,7 @@ import { ProductService } from './product.service';
 @Component({
   selector: 'app-root',
   
-  imports: [LoginComponent,RouterOutlet,NgIf, NgFor,RouterLink, RouterOutlet , FormComponent  ],
+  imports: [RouterOutlet,NgIf, NgFor,RouterLink, RouterOutlet , LoginComponent, FormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
